@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import Aaa2 from "./components/son2";
+
 const countContext = createContext(11);
 
 const Aaa = () => {
@@ -22,7 +22,6 @@ const CContext = () => {
         <Bbb></Bbb>
       </countContext.Provider>
       跨级传参
-      <Aaa2></Aaa2>
     </div>
   );
 };

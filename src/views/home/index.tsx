@@ -1,28 +1,19 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
+// import React from "react";
+import WrapSon from "./components/son";
 
-function Home() {
-  const [num, setNum] = useState(0);
-  const inputRef = useRef(null);
-  const [value, setValue] = useState("");
+function Ref() {
+  const ref = useRef<HTMLInputElement>(null);
 
-  const getRef = () => {
-    console.dir(inputRef.current);
-    console.log(inputRef.current?.value);
-  };
+  function handleFocus() {
+    ref.current?.focus();
+  }
   return (
     <div>
-      表单受控绑定
       <br />
-      <input
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        ref={inputRef}
-      ></input>
-      <button onClick={getRef}>获取ref</button>
-      <br />
-      {num}
-      <button onClick={() => setNum(num + 1)}>增加</button>
+      <button onClick={() => handleFocus()}>获取focus</button>
+      <WrapSon ref={ref}></WrapSon>
     </div>
   );
 }
-export default Home;
+export default Ref;
