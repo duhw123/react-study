@@ -1,4 +1,4 @@
-import { memo, useState, useEffect, useCallback, useMemo } from "react";
+import { memo, useState, useCallback, useMemo } from "react";
 
 interface BbbProps {
   num: number;
@@ -16,17 +16,17 @@ const Bbb = (props: BbbProps) => {
     </div>
   );
 };
-const MemoBaa = memo(Bbb);
+const MemoBaa = memo<BbbProps>(Bbb);
 
 function Demo() {
   const [num, setNum] = useState(0);
   const number = 10;
 
-  const BaaCallback = useCallback(function BaaCallback() {
+  const BaaCallback = useCallback<() => void>(function BaaCallback() {
     console.log(22);
   }, []);
 
-  const num2 = useMemo(() => {
+  const num2 = useMemo<number>(() => {
     return number * 2;
   }, [number]);
 

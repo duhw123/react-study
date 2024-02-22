@@ -3,7 +3,7 @@ import Aaa2 from "./components/son2";
 const countContext = createContext(11);
 
 const Aaa = () => {
-  const count = useContext(countContext);
+  const count = useContext<number>(countContext);
   return <div>Aaa {count}</div>;
 };
 const Bbb = () => {
